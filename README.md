@@ -60,8 +60,41 @@ error. This error does not stop the execution of the program, however, it change
 
 #Add exception handling to your Python code to address potential errors.       
 
-    except Exception as e:
+    except Exception as e: 
         print(f"Error processing {employee['name']}: {str(e)}")
+
+
+R Programming
+
+#  Step  2:  Create  a list  of  workers  dynamically
+>  workers  <-  list()
+>  for  (i in  1:400)  {
++       worker  <-  list(
++            name  =  paste("Worker",  i, sep =  ""),
++            gender  =  sample(c("Male",  "Female"),  1),
++            salary  =  runif(1,  5000,  30000)
++       )
++       workers  <-  c(workers,  list(worker))
++  }
+>
+>  #  Step  3:  Generate  payment  slips  using  a for  loop
+>  for  (worker  in  workers)  {
++       tryCatch({
++            #  Step  4:  Implement  conditional  statements
++            if (worker$salary  >  10000  &   worker$salary  <  20000)  {
++                worker$level  <-  "A1"
++            }  else  if (worker$salary  >  7500  &   worker$salary  <  30000  &   worker$gender  ==  "Female")  {
++                worker$level  <-  "A5-F"
++            }  else  {
++                worker$level  <-  "Other"
++            }
++
++            #  Display  payment  slip
++            cat("Name:",  worker$name,  ",  Salary:  $",  worker$salary,  ",  Level:",  worker$level,  "\n")
++       },  error  =  function(e)  {
++            cat("Error  processing",  worker$name,  ":",  conditionMessage(e),  "\n")
++       })
+
 
 ## Challenges:
 1.It was really time consuming and working and trying to understand
