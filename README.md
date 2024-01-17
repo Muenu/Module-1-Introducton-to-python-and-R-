@@ -1,6 +1,8 @@
 # Module-1-Introducton-to-python-and-R-
 Assignment 1_ Highridge Construction Company Payment Slips
-##Introduction For this project we will be using both Python and R programming languages to create random payment payslips for Highridge Company Employees. The main objective is to gain better understanding of the differences and similarities in both applications how they can be use in data analysis.
+
+##Introduction For this project we will be using both Python and R programming languages to create random payment payslips for Highridge Company Employees. 
+The main objective is to gain better understanding of the differences and similarities in both applications how they can be use in data analysis.
 
 ### Python & R Programming
 1. When working on this project i found that the language and syntax in  python  is easy to use and understand as it is in English language.
