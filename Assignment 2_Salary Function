@@ -1,1 +1,71 @@
+# This Assignment involves understanding  data processing, error handling, and file handling using Python and later zip the file and open it with R.
+
+## Step 1: Import Data
+I will be using pandas to import the csv file into my jupyter notebook
+
+import pandas as pd
+
+## Step 2: Create Employee Function
+### Develop a Python function that accepts an employee's name as input and returns their details.
+
+def get_employee_details(employee_name):
+    employee_details = salary[salary['EmployeeName'] == employee_name]
+    return employee_details
+
+## Step 3: Data Processing with Dictionary
+
+employee_dict = dict(zip(salary['EmployeeName'], salary.to_dict('records')))
+
+
+## Step 5: Error Handling
+
+def get_employee_details(employee_name):
+    try:
+        employee_details = salary[salary['EmployeeName'] == employee_name]
+        return employee_details
+    except Exception as e:
+        return f"Error: {str(e)}"
+
+
+## Step 6: Export Employee Details using libraries
+
+import os
+import zipfile
+
+## Step 7:Export an employee's details to a CSV file and save it within a zipped folder named "Employee Profile."
+
+zip_filename = 'employee_profile.zip'
+csv_filename = 'employee_details.csv'
+
+employee_name = 'David Wong' 
+
+details = get_employee_details(employee_name)
+
+details.to_csv(csv_filename, index=False)
+
+
+with zipfile.ZipFile(zip_filename, 'w') as zipf:
+    zipf.write(csv_filename)
+    
+os.remove(csv_filename)  
+
+## Step 7: Unzip and Display Data with R:
+
+### Importing libraries  in R
+
+library(utils)
+
+### Unzipping the zipped file and displaying the data 
+>  zip_path<-'C:\\Users\\DORIS\\employee_profile.zip'
+> unzip(zip_path)
+> 
+> employee_data <- read.csv('employee_details.csv')
+> print(employee_data)
+
+Lessons learnt:
+
+I am gtting to understand more on the similaties betwen R and Python as well as te diffeerences when it comes to the aplication of the code. 
+I have also updated my Github for the 1st assignment and this one to ensure that it is easier for anyone to read my work by incoporating the codes within the read me file.
+
+
 
